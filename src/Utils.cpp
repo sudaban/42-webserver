@@ -1,5 +1,6 @@
 #include <string>
 #include <fcntl.h>
+#include <sstream>
 
 std::string guess_mime(const std::string& path) {
     if (path.size()>=5 && path.substr(path.size()-5)==".html") return "text/html";
@@ -35,4 +36,24 @@ int make_nonblock(int fd) {
     if (fl == -1) return -1;
     if (fcntl(fd, F_SETFL, fl | O_NONBLOCK) == -1) return -1;
     return 0;
+}
+
+std::string http_response(int code, const std::string& reason, const std::string& body, const std::string& ctype) {
+    std::ostringstream oss;
+    oss << "HTTP/1.1 " << code << " " << reason << "\r\n";
+    oss << "Server: webserv-cpp98\r\n";
+    oss << "Content-Type: " << ctype << "\r\n";
+    oss << "Content-Length: " << body.size() << "\r\n";
+    oss << "Connection: close\r\n";
+    oss << "\r\n";
+    oss << body;
+    return oss.str();
+}
+
+std::string http_error(int code, const std::string& reason, const std::string& msg) {
+    std::ostringstream body;
+    body << "<html><head><title>" << code << " " << reason
+         << "</title></head><body><h1>" << reason
+         << "</h1><p>" << msg << "</p></body></html>";
+    return http_response(code, reason, body.str(), "text/html");
 }
