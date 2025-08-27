@@ -1,15 +1,19 @@
+
 CPP = c++
 SRC = src/main.cpp src/Utils.cpp src/Document.cpp
 CFLAGS = -Wall -Werror -Wextra
 
 NAME = webserv
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME):
-	$(CPP) $(CFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CPP) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
