@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>42 Webserv Projesi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #161b22;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #30363d;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #58a6ff;
+    }
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #161b22;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(88,166,255,0.2);
+    }
+    h2 {
+      color: #58a6ff;
+      margin-top: 0;
+    }
+    p {
+      line-height: 1.6;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+      background: #21262d;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #30363d;
+    }
+    li strong {
+      color: #79c0ff;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #8b949e;
+      border-top: 1px solid #30363d;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ecole 42 - Webserv Projesi</h1>
+  </header>
+
+  <section>
+    <h2>Projenin Amacı</h2>
+    <p><b>Webserv</b> projesi, <i>C++98</i> kullanarak sıfırdan kendi HTTP sunucumuzu yazmamızı ister. 
+    Bu süreçte ağ programlama, socket yönetimi, çoklu bağlantı desteği ve web protokolü gibi temel konuları öğreniriz.</p>
+  </section>
+
+  <section>
+    <h2>Bize Katacakları</h2>
+    <ul>
+      <li>🔹 <strong>Ağ Programlama</strong> → TCP/IP temelleri, socket kullanımı.</li>
+      <li>🔹 <strong>Çoklu İstek Yönetimi</strong> → select, poll, epoll, kqueue ile concurrency.</li>
+      <li>🔹 <strong>HTTP Protokolü</strong> → Request ve Response mantığı.</li>
+      <li>🔹 <strong>Process & Signal</strong> → fork, execve, signal ile süreç yönetimi.</li>
+      <li>🔹 <strong>Düşük Seviyeli Fonksiyonlar</strong> → okuma/yazma, hata yönetimi, descriptor kullanımı.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Kullanacağımız Fonksiyonlar</h2>
+    <ul>
+      <li><strong>execve</strong>: Yeni bir program çalıştırır.</li>
+      <li><strong>pipe</strong>: İki process arasında veri aktarımı için kanal oluşturur.</li>
+      <li><strong>strerror / gai_strerror</strong>: Hata kodlarını açıklayıcı string’e çevirir.</li>
+      <li><strong>errno</strong>: Son hatanın kodunu tutar.</li>
+      <li><strong>dup / dup2</strong>: Dosya tanıtıcısını kopyalar.</li>
+      <li><strong>fork</strong>: Yeni bir process oluşturur.</li>
+      <li><strong>socketpair</strong>: İki yönlü bağlantılı socket çifti açar.</li>
+      <li><strong>htons / htonl / ntohs / ntohl</strong>: Ağ ve host byte sırası arasında dönüşüm yapar.</li>
+      <li><strong>select / poll / epoll / kqueue</strong>: Çoklu socket bağlantısını aynı anda takip eder.</li>
+      <li><strong>socket</strong>: Ağ üzerinden iletişim başlatmak için socket açar.</li>
+      <li><strong>accept</strong>: Sunucu tarafında gelen bağlantıyı kabul eder.</li>
+      <li><strong>listen</strong>: Socket’i dinleme moduna alır.</li>
+      <li><strong>send / recv</strong>: Ağ üzerinden veri gönderip alır.</li>
+      <li><strong>chdir</strong>: Çalışma dizinini değiştirir.</li>
+      <li><strong>bind</strong>: Socket’i belirli bir IP ve port’a bağlar.</li>
+      <li><strong>connect</strong>: İstemci olarak sunucuya bağlanır.</li>
+      <li><strong>getaddrinfo / freeaddrinfo</strong>: Hostname → IP çözümlemesi yapar.</li>
+      <li><strong>setsockopt</strong>: Socket ayarlarını değiştirir (ör. tekrar kullanılabilir port).</li>
+      <li><strong>getsockname</strong>: Socket’in bağlı olduğu adresi öğrenir.</li>
+      <li><strong>getprotobyname</strong>: Protokol bilgisini alır (TCP, UDP).</li>
+      <li><strong>fcntl</strong>: Dosya tanıtıcısının özelliklerini değiştirir.</li>
+      <li><strong>close</strong>: Dosya/socket kapatır.</li>
+      <li><strong>read / write</strong>: Veri okur ve yazar.</li>
+      <li><strong>waitpid</strong>: Child process’in bitmesini bekler.</li>
+      <li><strong>kill</strong>: Bir process’e sinyal gönderir.</li>
+      <li><strong>signal</strong>: Sinyalleri yakalamak için handler tanımlar.</li>
+    </ul>
+  </section>
+
+ <footer>
+    © 2025 Ecole 42 - Webserv Projesi | 
+    <a href="https://github.com/sudaban">sudaban</a>
+  </footer>
+</body>
+</html>
