@@ -1,7 +1,8 @@
 
+
 CPP = c++
 SRC = src/main.cpp src/Utils.cpp src/Document.cpp src/Server.cpp
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = webserv
 

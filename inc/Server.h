@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:57:29 by sdaban            #+#    #+#             */
-/*   Updated: 2025/09/03 13:00:40 by sdaban           ###   ########.fr       */
+/*   Updated: 2025/09/03 13:22:55 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <sys/select.h>
 #include "Client.h"
 
 class Server {

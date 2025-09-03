@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 00:10:26 by sdaban            #+#    #+#             */
-/*   Updated: 2025/09/03 13:09:19 by sdaban           ###   ########.fr       */
+/*   Updated: 2025/09/03 13:23:05 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sstream>
+#include <cerrno>
 #include "../inc/webserv.h"
 
 bool load_file_to(std::string fullpath, std::string& out) {
