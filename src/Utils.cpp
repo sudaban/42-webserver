@@ -24,7 +24,7 @@ bool sanitize_path(const std::string& url_path, std::string& out_clean) {
     size_t q = p.find('?'); if (q != std::string::npos) p = p.substr(0, q);
     // default index
     if (p == "/") p = "/index.html";
-    // block directory traversal
+
     if (p.find("..") != std::string::npos) return false;
     out_clean = p;
     return true;

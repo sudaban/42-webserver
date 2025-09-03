@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 00:10:26 by sdaban            #+#    #+#             */
-/*   Updated: 2025/08/28 00:20:16 by sdaban           ###   ########.fr       */
+/*   Updated: 2025/09/03 13:09:19 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void process_request(const std::string& req, const std::string& docroot, std::st
     std::string::size_type p = req.find("\r\n");
     if (p == std::string::npos) { response_out = http_error(400, "Bad Request", "Malformed request line."); return; }
     std::string reqline = req.substr(0, p);
-    // split by spaces
+   
     std::string method, target, version;
     {
         std::istringstream iss(reqline);
