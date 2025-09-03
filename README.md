@@ -31,7 +31,7 @@ The goal is to mimic the behavior of real-world HTTP servers like **nginx** or *
 ### 1. Clone the repository
 
 bash
-git clone https://github.com/yourusername/webserv.git
+git clone https://github.com/sudaban/42-webserv.git
 cd webserv
 
 ### 2. Compile the server
