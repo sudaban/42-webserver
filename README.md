@@ -32,20 +32,23 @@ The goal is to mimic the behavior of real-world HTTP servers like **nginx** or *
 
 bash
 git clone https://github.com/sudaban/42-webserv.git
+
 cd webserv
 
 ### 2. Compile the server
 make
 
 ### 3. Run the server
+```
 ./webserv <port> <docroot>
+```
 
 ### 4. Open your browser
-http://localhost:8080
+```http://localhost:8080```
 
 You can also use curl:
 
-curl http://localhost:8080
+```curl http://localhost:8080```
 
 ### 🧾 Configuration
 The server behavior is defined via configuration files, similar to nginx.
